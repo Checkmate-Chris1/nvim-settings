@@ -74,7 +74,7 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = false
 
 -- turn off statusline
-vim.o.laststatus = 0
+vim.o.laststatus = 3
 
 -- Minimal number of screen lines to keep above and below the cursor.
 -- keep it centered
@@ -179,6 +179,18 @@ require('lazy').setup({
   --
   -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
   --
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'onedark',
+          icons_enabled = vim.g.have_nerd_font,
+        },
+      }
+    end,
+  },
 
   -- Alternatively, use `config = function() ... end` for full control over the configuration.
   -- If you prefer to call `setup` explicitly, use:
@@ -868,9 +880,9 @@ require('lazy').setup({
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
-      -- local statusline = require 'mini.statusline'
+      local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
-      -- statusline.setup { use_icons = vim.g.have_nerd_font }
+      statusline.setup { use_icons = vim.g.have_nerd_font }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we set the section for
