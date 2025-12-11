@@ -1,22 +1,23 @@
 return {
-  "vyfor/cord.nvim",
+  'vyfor/cord.nvim',
   lazy = false,
-  build = ":Cord update",
+  build = ':Cord update',
   opts = {
     editor = {
       -- client = "nvchad",
-      client = "neovim",
+      client = 'neovim',
     },
     display = {
-      theme = "catppuccin",
+      theme = 'catppuccin',
     },
     idle = {
       -- timeout - this is 5 min (in ms)
       timeout = 300000,
     },
     text = {
+      workspace = '',
       editing = function(opts)
-        return string.format("Editing %s - %s:%s", opts.filename, opts.cursor_line, opts.cursor_char)
+        return 'Editing CheckmateChris1 stuff'
       end,
     },
   },
