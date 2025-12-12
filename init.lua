@@ -185,7 +185,7 @@ require('lazy').setup({
     config = function()
       require('lualine').setup {
         options = {
-          theme = 'onedark',
+          theme = 'vscode',
           icons_enabled = vim.g.have_nerd_font,
         },
       }
@@ -832,7 +832,7 @@ require('lazy').setup({
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       require('eldritch').setup {
-        transparent = true,
+        transparent = false,
         styles = {
           comments = { italic = false },
           keywords = { italic = false },
@@ -841,7 +841,7 @@ require('lazy').setup({
           colors.comment = '#6a9955'
         end,
       }
-      vim.cmd.colorscheme 'eldritch'
+      -- vim.cmd.colorscheme 'eldritch'
     end,
   },
 
@@ -850,9 +850,20 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       require('ashen').setup {
-        transparent = true,
+        transparent = false,
       }
       -- vim.cmd.colorscheme 'ashen'
+    end,
+  },
+
+  {
+    'Mofiqul/vscode.nvim',
+    priority = 1000,
+    config = function()
+      require('vscode').setup {
+        transparent = false,
+      }
+      vim.cmd.colorscheme 'vscode'
     end,
   },
 
